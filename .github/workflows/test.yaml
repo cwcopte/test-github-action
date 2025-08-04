@@ -10,6 +10,7 @@ jobs:
   - name: Parse YAML
     run: |
       yq --version
+      cd ${{ GITHUB.WORKSPACE }}
       yq -n 'load("file1.yaml") * load("file2.yaml")'
   # - name: yq - portable yaml processor
   #   uses: mikefarah/yq@v4.47.1
