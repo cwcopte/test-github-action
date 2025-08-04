@@ -12,7 +12,8 @@ jobs:
     run: |
       yq --version
       #yq -n 'load("${{ GITHUB.WORKSPACE }}/file1.yaml") * load("${{ GITHUB.WORKSPACE }}/file2.yaml")'  
-      yq eval-all '. as $item ireduce ({}; . * $item)'  "${{ GITHUB.WORKSPACE }}/source/file1.yaml" "${{ GITHUB.WORKSPACE }}/source/file2.yaml"
+      #yq eval-all '. as $item ireduce ({}; . * $item)'  "${{ GITHUB.WORKSPACE }}/source/file1.yaml" "${{ GITHUB.WORKSPACE }}/source/file2.yaml"
+      yq eval-all '. as $item ireduce ({}; . *+ $item)'  "${{ GITHUB.WORKSPACE }}/source/file1.yaml" "${{ GITHUB.WORKSPACE }}/source/file2.yaml"
       yq merge --arrays=append "${{ GITHUB.WORKSPACE }}/source/file1.yaml" "${{ GITHUB.WORKSPACE }}/source/file2.yaml"  
   - name: publish artiface
     uses: actions/upload-artifact@v4
