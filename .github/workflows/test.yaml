@@ -9,7 +9,7 @@ jobs:
   steps:
   - name: Parse YAML
     run: |
-    yq --version
+      yq --version
   - name: yq - portable yaml processor
     uses: mikefarah/yq@v4.47.1
     run: |
