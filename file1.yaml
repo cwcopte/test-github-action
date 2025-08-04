@@ -1,0 +1,4 @@
+apis:
+  - name: api-v1
+    properties:
+      serviceUrl: https://www.google.com

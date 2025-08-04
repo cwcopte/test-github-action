@@ -1,0 +1,4 @@
+apis:
+  - name: api-v2
+    properties:
+      serviceUrl: https://www.baidu.com
